@@ -1,0 +1,37 @@
+
+
+<ion-view class="profile-view">
+  <ion-nav-title>
+    <span>Perfil</span>
+  </ion-nav-title>
+  <ion-content>
+   
+<div class="row">
+      <div class="profile-container">
+        <div class="user-image-container" style="text-align:center">
+          <pre-img ratio="_1_1" helper-class="rounded-image">
+            <img class="user-image" ng-src="{{user.image}}" spinner-on-load>
+          </pre-img>
+        </div>
+        <div class="user-name">{{user.name}} {{user.lastName}}</div>
+        <div class="user-twitter">{{user.email}}</div>
+      </div>
+      <div class="user-background-image-outer">
+        <div multi-bg="['img/logo-cenfotec-white-80.jpg']"></div>
+      </div>
+    </div>
+    <div class="bottom-content">
+        <div class="user-bio ">
+        <div class="row">
+        <div class="content col-md-6" style="width:100%; text-align:center">
+            <span styel="font-size: 50px;">Puntos Actuales</sapn><br><h2><span style="color:green">{{user.currentPoints}}</span></h2>
+          </div>
+        <div class="content col-md-6" style="width:100%; text-align:center">
+           <span  styel="font-size: 50px;">Puntos Totales</span> <br><h2><span style="color:green">{{user.points}}</span></h2>
+          </div>
+      </div>
+            </div>
+      
+    </div>
+  </ion-content>
+</ion-view>

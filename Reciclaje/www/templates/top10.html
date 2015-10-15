@@ -1,0 +1,20 @@
+<ion-view class="category-feeds-view">
+  <ion-nav-title>
+    <span>Top 10</span>
+  </ion-nav-title>
+  <ion-content>
+    <div class="list category-feeds">
+      <a ng-repeat="user in top10" class="item item-icon-right" >
+        <div class="thumbnail-outer">
+          <pre-img ratio="_1_1" helper-class="">
+            <img class="thumbnail" ng-src="{{user.image}}" spinner-on-load>
+          </pre-img>
+        </div>
+        <div>
+          <span class="title">{{user.name}} {{user.lastName}}</span>
+          <p class="description">Puntos: <span style="color:green">{{user.points}}</span></p>
+        </div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

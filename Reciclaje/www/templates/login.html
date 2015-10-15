@@ -1,0 +1,69 @@
+<!--<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Cerrar</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="text" ng-model="loginData.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Contraseña</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+         <label ng-show="authError" class="item-input">
+          <div style="color:red" >
+          {{authError}}
+      </div>
+        </label>
+          
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Ingresar</button>
+      </div>
+    </form>
+        </label>
+          <label class="item" style="vertical-align: bottom">
+          <button class="button button-block button-positive" ng-click="signup()">Registrar</button>
+        </label>
+  </ion-content>
+</ion-modal-view>-->
+
+<ion-view class="login-view auth-view" cache-view="false">
+  <ion-content scroll="false">
+    <div class="row">
+      <div class="col col-center">
+        <div class="card login-container" content-tabs tabsdata='tabsdata'>
+          <form name="login_form" class="" novalidate ng-cloak>
+            <div class="list">
+                  <label class="item item-input">
+                    <input type="text" planceholder="Email" name="user_email" ng-model="loginData.username">
+                  </label>
+                  <label class="item item-input" show-hide-container>
+                    <input type="password" placeholder="Password" name="user_password" ng-model="loginData.password" required>
+                  </label>
+                </div>
+            <div class="item item-body bottom-content">
+              <button type="submit" class="button button-positive button-block" ng-click="doLogIn()" ng-disabled="(selected_tab=='Email') ? (login_form.user_email.$invalid || login_form.user_password.$invalid) : ((selected_tab=='Phone') ? (login_form.user_phone.$invalid || login_form.user_pin.$invalid) : false)">
+                Ingresar
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="alternative-actions">
+          <!--<a class="forgot-password button button-small button-clear button-light" ui-sref="auth.forgot-password">
+            Forgot Password?
+          </a>-->
+          <a class="sign-up button button-small button-clear button-light" ui-sref="auth.signup">
+            Registrar
+          </a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

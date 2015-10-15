@@ -1,0 +1,45 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content class="post-size-14px">
+    <ion-nav-bar class="bar app-top-bar">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+   <ion-side-menu side="left" class="main-menu" expose-aside-when="large">
+    <ion-header-bar class="bar-stable app-top-bar">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item class="item-icon-left" nav-clear menu-close ng-if="!logged" href="#/login">
+          <h2 class="menu-text">Inciar Sesión</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close ng-show="logged" href="#/app/account">
+          <h2 class="menu-text">Perfil</h2>
+        </ion-item>
+           </ion-item>
+          <ion-item class="item-icon-left" nav-clear menu-close href="#/app/scan">
+          <h2 class="menu-text">Escaner</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close href="#/app/top10">
+          <h2 class="menu-text">Top 10</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close href="#/app/awards">
+          <h2 class="menu-text">Premios</h2>
+        </ion-item>
+          <ion-item class="item-icon-left" nav-clear menu-close href="#/app/about">
+          <h2 class="menu-text">Acerca de</h2>
+        </ion-item>
+        <ion-item class="item-icon-left" nav-clear menu-close style="border-color: #ff1919; background-color: #FF4C4C;" ng-show="logged" ng-click="logout()">
+          <h2 class="menu-text">Cerrar Sesión</h2>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

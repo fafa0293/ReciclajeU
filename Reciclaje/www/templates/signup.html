@@ -1,0 +1,75 @@
+<ion-view view-title="Registrar">
+  <ion-content>
+    <form ng-submit="doSignUp()" name="registerForm">
+        <div >
+        
+        </div>
+        
+      <div class="list">
+          
+        <label class="item-floating-label">
+            <label class="item item-input" ng-class="{ 'has-errors' : registerForm.name.$invalid && registerForm.name.$touched, 'no-errors' : registerForm.name.$valid && registerForm.name.$touched}">
+                <span class="input-label" ng-show="registerForm.name.$touched">Nombre</span>
+                <input type="tel" placeholder="Nombre" name="name" ng-model="signupData.name" required>
+            </label>
+        </label>
+        <label class="error-container item-input" ng-show="registerForm.name.$invalid && registerForm.name.$touched"  >
+             <span style="color:red"> Por favor ingrese su nombre</span>
+        </label>
+          
+          
+       <!-- /*<label class="item item-input" ng-class="{ 'has-errors' : registerForm.name.$invalid && registerForm.name.$touched, 'no-errors' : registerForm.name.$valid && registerForm.name.$touched}">
+          <span class="input-label">Nombre</span>
+          <input type="text" name="name" ng-model="signupData.name" required>
+        </label>
+          <label class="error-container item-input" ng-show="registerForm.name.$invalid && registerForm.name.$touched"  >
+             <span style="color:red"> Por favor ingrese su nombre</span>
+        </label>*/-->
+          <label class="item-floating-label">
+              <label class="item item-input" ng-class="{ 'has-errors' : registerForm.lastName.$invalid && registerForm.lastName.$touched, 'no-errors' : registerForm.lastName.$valid && registerForm.lastName.$touched}">
+              <span class="input-label" ng-show="registerForm.lastName.$touched">Apellidos</span>
+              <input type="text" placeholder="Apellidos" name="lastName" ng-model="signupData.lastName" required>
+             </label>
+          </label>
+          <label class="error-container item-input" ng-show="registerForm.lastName.$invalid && registerForm.lastName.$touched"  >
+             <span style="color:red"> Por favor ingrese sus apellidos</span>
+        </label>
+          <label class="item-floating-label" >
+        <label class="item item-input" ng-class="{ 'has-errors' : registerForm.email.$invalid && registerForm.email.$touched, 'no-errors' : registerForm.email.$valid && registerForm.email.$touched}">
+          <span class="input-label" ng-show="registerForm.email.$touched">Email</span>
+          <input type="email" placeholder="Email" name="email" ng-model="signupData.email" ng-pattern="/^[A-Za-z0-9._%+-]+@ucenfotec.ac.cr$/" required>
+        </label>
+          </label>
+          <label class="error-container item-input" ng-show="registerForm.email.$invalid && registerForm.email.$touched">
+             <span style="color:red"> Porfavor ingrese un correo válido de Cenfotec</span>
+        </label>
+          <label ng-show="authError" class="item-input">
+              <div style="color:red" >
+                  {{authError}}
+              </div>
+          </label>
+          <label class="item-floating-label">
+        <label class="item item-input" ng-class="{ 'has-errors' : registerForm.password.$invalid && registerForm.password.$touched, 'no-errors' : registerForm.password.$valid && registerForm.password.$touched}">
+          <span class="input-label" ng-show="registerForm.password.$touched">Contraseña</span>
+          <input type="password" placeholder="Contraseña" name="password" ng-model="signupData.password" ng-pattern="/(?=.*\d)(?=.*[a-z]).{8,}/" required>
+        </label>
+          </label>
+        <label class="error-container item-input" ng-show="registerForm.password.$invalid && registerForm.password.$touched">
+            <span style="color:red"> Por favor ingrese una contraseña con al menos: <li> Un número </li> <li>  Una letra </li> <li>  8 Caracteres</li>  </span>
+        </label>
+          <label class="item-floating-label" >
+        <label class="item item-input" ng-class="{ 'has-errors' : registerForm.confirmPassword.$invalid && registerForm.confirmPassword.$touched, 'no-errors' : registerForm.confirmPassword.$valid && registerForm.confirmPassword.$touched}">
+          <span ng-show="registerForm.confirmPassword.$touched" class="input-label">Confirmar Contraseña</span>
+          <input type="password" placeholder="Confirmar Contraseña" name="confirmPassword" ng-model="signupData.confirmPassword" ui-validate=" '$value==signupData.password' "
+						ui-validate-watch=" 'signupData.password' " required>
+            </label>
+          </label>
+         <label class="error-container item-input" ng-show="registerForm.confirmPassword.$invalid && registerForm.confirmPassword.$touched" class="item-input">
+             <span style="color:red"> La contraseña no coincide </span>
+        </label>
+        <label class="item">
+          <button class="button button-block" style="background-color:#8e44ad; color:#ffffff" type="submit" ng-disabled="registerForm.$invalid">Registrar</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
